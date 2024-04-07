@@ -1,0 +1,20 @@
+{
+  "name": "https-hurima",
+  "version": "1.0.0",
+  "description": "Este repositorio cumplira el rol de alojar nuestra pagina web en el ramo de Integracion de plataformas 009D de DUOC UC San Joaquin.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "app": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
