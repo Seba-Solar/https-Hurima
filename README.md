@@ -13,7 +13,7 @@ Actualizaciones en tiempo real del backend con nodemon ^3.1.0
 
 Para levantar el servidor localmente
 
-node run app
+node app
 
 Como abrir la pagina web desde el navegador local.
 

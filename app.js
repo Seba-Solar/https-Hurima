@@ -1,13 +1,23 @@
-// app.js
+const express = require('express');
+const app = express();
+const path = require('path');
 
-var express = require('express');
 const router = express.Router();
-var app = express();
 
 router.get('/index', (req, res) => {
-    res.send('index');
-  });
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
-var port = process.env.PORT || 8082;
+app.get("/" , (req,res) => {
+	res.redirect('/login.html');
+});
+router.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+
+
+app.use('/', router);
+const port = process.env.PORT || 8082;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
