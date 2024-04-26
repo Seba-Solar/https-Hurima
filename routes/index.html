@@ -1,5 +1,29 @@
 <!doctype html>
 <html lang="en">
+  <style>
+    
+    :root {
+        --color-primary: #0051ff53; 
+        --color-secondary: #ffffff;
+    }
+    /* Estilos para el footer */
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .navbar{
+      /* background-color: var(--color-primary); */
+      
+      
+
+    }
+
+  </style>
 
 <head>
   <meta charset="utf-8">
@@ -13,7 +37,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg sticky-top bg-light " >
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Hurima</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -34,7 +58,14 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <ul class="navbar-nav ">
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link" href="/registro.html">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login.html">Iniciar Sesión</a>
+          </li>
+          
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               [Nombre Usuario]
             </a>
@@ -44,7 +75,7 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item text-danger" href="#">Cerrar Sesión</a></li>
             </ul>
-          </li>
+          </li> -->
           
         </ul>
       </div>
@@ -125,9 +156,47 @@
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   
 </body>
-
+<footer>
+  <p>© 2024 Todos los derechos reservados.</p>
+</footer>
 </html>
