@@ -11,6 +11,10 @@ El backend utilizado para el routing es express ^4.19.2
 
 Actualizaciones en tiempo real del backend con nodemon ^3.1.0
 
+Para descargar el proyecto utilizar GIT CLONE!!!
+
+Comando: git clone "https://github.com/Seba-Solar/https-Hurima"
+
 Para levantar el servidor localmente
 
 node app
