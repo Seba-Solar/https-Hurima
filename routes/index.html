@@ -1,14 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <style>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hurima index</title>
+    <link rel="icon" href="https://media.forgecdn.net/avatars/34/227/635907049004932561.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet">
+
+    <style>
     
     :root {
-        --color-primary: #0051ff53; 
-        --color-secondary: #ffffff;
+        --color-primary: #fff; 
+        --color-secondary: #DC2F02;
+        --color-tertiary: #D4AF37;
+        --color-quaternary: #125338;
+        --color-quinary: #000000;
     }
+    body{
+      font-family: "Quicksand", sans-serif;
+      
+    }
+
     /* Estilos para el footer */
     footer {
-        background-color: #333;
+        background-color: var(--color-quaternary);
         color: white;
         text-align: center;
         padding: 10px 0;
@@ -16,187 +39,402 @@
         bottom: 0;
         width: 100%;
     }
-    .navbar{
-      /* background-color: var(--color-primary); */
-      
-      
-
+    .navbar  a{
+      font-size: large;
+      font-weight: bolder;
+      color: var(--color-quaternary);
     }
 
+    #botonreg a{
+      border: 3px solid var(--color-quaternary);
+      font-weight: bolder;
+      color: var(--color-quaternary);
+    }
+    #botonreg:hover > a{
+      background-color: var(--color-quaternary);
+      color: white;
+    }
+
+    #botonini > a {
+      border: 3px solid var(--color-tertiary);
+      font-weight: bolder;
+      color: var(--color-tertiary);
+      background-color: var(--color-primary);
+      margin-left: 5px;
+      
+    }
+
+    #botonini:hover > a{
+      background-color: var(--color-tertiary);
+      color: white;
+    }
+    
+    .navbar-brand {
+      font-weight: bolder;
+      color: var(--color-quaternary);
+    }
+    
+    .navbar-nav button[type="submit"] {
+      background-color: var(--color-primary); /* Color de fondo inicial */
+      color: var(--color-quaternary); /* Color del texto inicial */
+      font-weight: bold;
+      border: solid 3px;
+      border-color: var(--color-quaternary); /* Color del borde inicial */
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave */
+  }
+
+  .navbar-nav button[type="submit"]:hover {
+    background-color: var(--color-quaternary); /* Color de fondo al hacer hover */
+    color: white; /* Color del texto al hacer hover */
+    border-color: var(--color-quaternary); /* Color del borde al hacer hover */
+  }
+
+  .navbar-nav input[type="search"] {
+    background-color: var(--color-primary); /* Color de fondo inicial */
+    color: var(--color-quaternary); /* Color del texto inicial */
+    
+    border: solid 1px;
+    border-color: var(--color-quaternary); /* Color del borde inicial */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave */
+  }
+  /* SECTION inicio */
+  .full-screen-section {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-quaternary);
+}
+
+.full-screen-section .row {
+  display: flex;
+  flex-direction: column; /* Cambiamos la dirección a column para que los elementos se apilen verticalmente */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 100px;
+}
+
+
+
+.full-screen-section .column:first-child {
+  margin-bottom: 20px; /* Añadimos un margen inferior a la primera columna */
+}
+
+.full-screen-section .btn {
+  margin-top: 20px; /* Añadimos un margen superior al botón */
+  padding: 18px 30px;
+  margin-inline-start: 20px;
+  border-radius: 50px;
+  border: 2px solid var(--color-quaternary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px; /* Agrega un espacio adicional entre los botones */
+  background: var(--color-primary);
+  font-weight: 600;
+  color: var(--color-quaternary);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.full-screen-section .btn:hover {
+  background-color: var(--color-quaternary);
+  color: var(--color-primary);
+}
+
+.btn:last-child {
+  border: 2px solid var(--color-tertiary);
+  color: var(--color-tertiary);
+}
+
+.btn:last-child:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+}
+
+.full-screen-section .section-gif {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-left: 60px;
+}
+
+/* Section Anuncios */
+.card{
+  background-color: var(--color-primary);
+  color: var(--color-quaternary);
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+
+@media (min-width: 768px) {
+  .full-screen-section .row {
+    flex-direction: row; /* Cambiamos la dirección a row para que las columnas se sitúen una al lado de la otra en pantallas grandes */
+  }
+
+  .full-screen-section .column {
+    flex-basis: 45%;
+  }
+
+  .full-screen-section .column:first-child {
+    margin-bottom: 0; /* Eliminamos el margen inferior de la primera columna en pantallas grandes */
+    margin-right: 20px; /* Añadimos un margen derecho a la primera columna en pantallas grandes */
+  }
+}
+
+
   </style>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hurima index</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <nav class="navbar navbar-expand-lg sticky-top bg-light " >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Hurima</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/anuncio-crear.html">Crear Anuncio</a>
-          </li>
-        </ul>
-        <form class=" navbar-nav me-auto mb-2 mb-lg-0 d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link" href="/registro.html">Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login.html">Iniciar Sesión</a>
-          </li>
-          
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              [Nombre Usuario]
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Ver perfil</a></li>
-              <li><a class="dropdown-item" href="#">Configuración</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="#">Cerrar Sesión</a></li>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <header>
+      <nav class="navbar navbar-expand-lg sticky-top bg-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://media.forgecdn.net/avatars/34/227/635907049004932561.png"
+              alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/anuncio-crear.html">Crear Anuncio</a>
+              </li>
             </ul>
-          </li> -->
-          
-        </ul>
+            <form class=" navbar-nav me-auto mb-2 mb-lg-0 d-flex" role="search">
+              <input class="form-control me-2" type="search"
+                placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success"
+                type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item" id="botonreg">
+                <a class="nav-link" style=" font: bold;"
+                  href="/registro.html">Registrarse</a>
+              </li>
+              <li class="nav-item" id="botonini">
+                <a class="nav-link" href="/login.html">Iniciar Sesión</a>
+              </li>
+
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  [Nombre Usuario]
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+                  <li><a class="dropdown-item" href="#">Configuración</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-danger" href="#">Cerrar Sesión</a></li>
+                </ul>
+              </li> -->
+
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+    <main class="full-screen-section">
+      <div class="row container">
+
+        <div class="column">
+          <h1>¡Bienvenido a Shurima Ads!</h1>
+          <h2>Publica tus anuncios <br /> al mejor precio </h2>
+          <br />
+          <div class="botonexplorar">
+            
+            <a href="#contenido" class="btn explorar-button">Explorar</a>
+            <a href="login.html" class="btn ">Publica un anuncio</a>
+          </div>
+        </div>
+
+        <div class="column">
+          <img
+            src="https://media.forgecdn.net/avatars/34/227/635907049004932561.png"
+            alt="Animated Decorative GIF" class="section-gif">
+        </div>
       </div>
 
-    </div>
-  </nav>
-  <div class="container text-center">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2017/06/bootstrap-layout-2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </main>
+    <section class="anuncios" id="contenido">
+      <div class="container text-center">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://mdbcdn.b-cdn.net/wp-content/uploads/2017/06/bootstrap-layout-2.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This content
+                  is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a
+                  natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://mdbcdn.b-cdn.net/wp-content/uploads/2017/06/bootstrap-layout-2.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://mdbcdn.b-cdn.net/wp-content/uploads/2017/06/bootstrap-layout-2.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text
+                  below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height
+                  action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2017/06/bootstrap-layout-2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2017/06/bootstrap-layout-2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://htmlburger.com/blog/wp-content/uploads/2021/02/lets-talk-about-bootstrap.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</body>
-<footer>
-  <p>© 2024 Todos los derechos reservados.</p>
-</footer>
+    </section>
+    
+
+  </body>
+  <footer>
+    <p>© 2024 Todos los derechos reservados.</p>
+  </footer>
 </html>
