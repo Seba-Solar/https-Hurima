@@ -9,6 +9,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet">
+    <script src="../js/scripts.js"></script>
     <style>
             
       :root {
@@ -138,19 +139,15 @@
           <div class="card-body">
               <h1>Publica aquí tu anuncio</h1>
 
-              <form>
+              <form id="crear-anuncio">
                   <div class="mb-3">
-                    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
-                    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+                    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="nombre" name="nombre">
+                    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="descripcion" name="descripcion">
                     <div class="mb-3">
                         <label for="formFileSm" class="form-label">Small file input example</label>
-                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        <input class="form-control form-control-sm" id="formFileSm" name="formFileSm" type="file">
                     </div>
                   </div>
-                  
-
-                  
-
                   <a href="index" class="btn btn-primary ">Volver</a>
                   <button type="submit" class="btn btn-primary ">Confirmar</button>
 
