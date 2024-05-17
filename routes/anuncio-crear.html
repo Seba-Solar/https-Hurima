@@ -138,10 +138,14 @@
           <div class="card-body">
               <h1>Publica aquí tu anuncio</h1>
 
-              <form action="/formulario" method="POST">
+              <form action="/formulario" method="post" enctype="multipart/form-data">
                   <div class="mb-3">
-                    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="nombre" name="nombre">
+                    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="titulo" name="titulo">
                     <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="descripcion" name="descripcion">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Suba su imagen de anuncio</label>
+                      <input class="form-control" type="file" id="formFile" name="imagen">
+                    </div>
                   </div>
                   <a href="index" class="btn btn-primary ">Volver</a>
                   <button type="submit" class="btn btn-primary ">Confirmar</button>

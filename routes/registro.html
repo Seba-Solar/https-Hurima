@@ -104,31 +104,23 @@
                 <div class="card-body">
                     <h1>Únete a nosotros!</h1>
 
-                    <form>
+                    <form action="/registrar_usuario" method="POST">
                         <div class="mb-3">
                             <label for="exampleInputName"
-                                class="form-label">Nombre</label>
-                            <input type="text" class="form-control"
-                                id="exampleInputName">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputLastName"
-                                class="form-label">Apellido</label>
-                            <input type="text" class="form-control"
-                                id="exampleInputLastName">
+                                class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre_completo" name="nombre_completo">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPhone"
                                 class="form-label">Teléfono</label>
                             <input type="text" class="form-control"
-                                id="exampleInputPhone">
+                                id="telefono" name="telefono">
                         </div>
-
                         <div class="mb-3">
                             <label for="exampleInputEmail1"
                                 class="form-label">Email</label>
                             <input type="email" class="form-control"
-                                id="exampleInputEmail1"
+                                id="email" name="email"
                                 aria-describedby="emailHelp">
                         </div>
 
@@ -136,7 +128,7 @@
                             <label for="exampleInputPassword1"
                                 class="form-label">Contraseña</label>
                             <input type="password" class="form-control"
-                                id="exampleInputPassword1">
+                                id="password" name="password">
                         </div>
 
                         <a href="index" class="btn btn-primary ">Volver</a>
