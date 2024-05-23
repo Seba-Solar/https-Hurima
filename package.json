@@ -4,9 +4,7 @@
   "description": "Este repositorio cumplira el rol de alojar nuestra pagina web en el ramo de Integracion de plataformas 009D de DUOC UC San Joaquin.",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "app": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +13,12 @@
     "nodemon": "^3.1.0"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.9.7",
-    "transbank-sdk": "^5.0.0"
+    "transbank-sdk": "^5.0.0",
+    "xmlbuilder": "^15.1.1"
   }
 }

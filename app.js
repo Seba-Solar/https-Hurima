@@ -3,6 +3,8 @@
   const path = require('path');
   const mysql = require('mysql2');
   const multer = require('multer');
+  const axios = require('axios');
+  const xmlbuilder = require('xmlbuilder');
   const port = 8082;
 
   //IMPORTANTE NO BORRAR
@@ -50,11 +52,28 @@
   });
   // -------------------- ROUTING ------------------------ //
 
+  // ------------------------ API REST ------------------------ //
+  app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello, World!' });
+  });
+  app.get('/api/anuncios', (req, res) => {
+    const sqlQuery = 'SELECT * FROM anuncios';
+    conexion.query(sqlQuery, (error, results, fields) => {
+      if (error) {
+        console.error('Error al ejecutar la consulta:', error.message);
+        return res.status(500).send('Error al obtener los anuncios');
+      }
+      console.log('Consulta ejecutada con éxito');
+      res.json(results);
+    });
+  });
+  // ------------------------ API REST ------------------------ //
+
  // ------------------------ CREACION DE ANUNCIOS ------------------------ // 
  app.post('/formulario', upload.single('imagen'), (req, res) => {
   const titulo = req.body.titulo;
   const descripcion = req.body.descripcion;
-  const imagen = req.file.buffer; 
+  const imagen = req.file.buffer;
   
   //Insert into
   const sqlQuery = 'INSERT INTO anuncios (titulo, descripcion, imagen) VALUES (?, ?, ?)';
@@ -118,3 +137,36 @@
       }
     })
   });
+  //------------------------ LOGIN DE USUARIOS ------------------------ //
+
+  //------------------------ API TIENDA -------------------------------//
+  app.get('/tienda/api/productos', (req, res) => {
+    axios.get('https://fakestoreapi.com/products').then(function (response) {
+        const productos = response.data;
+        let htmlResponse = '<div class="container"><div class="row">';
+
+        productos.forEach(producto => {
+            htmlResponse += `
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="${producto.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${producto.title}</h5>
+                            <p class="card-text">${producto.description}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        htmlResponse += '</div></div>';
+        
+        res.send(htmlResponse);
+    }).catch(error => {
+        res.status(500).send('Error al obtener los productos');
+    });
+});
+  //------------------------ API TIENDA -------------------------------//
