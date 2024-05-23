@@ -15,7 +15,11 @@ Para descargar el proyecto utilizar GIT CLONE!!!
 
 Comando: git clone "https://github.com/Seba-Solar/https-Hurima"
 
-Para levantar el servidor localmente
+Para levantar el servidor localmente REQUERIMOS DE
+
+LARAGON PARA LEVANTAR LA BASE DE DATOS
+
+NODE JS PARA EJECTUAR EL SERVIDOR LOCAL DE EXPRESS
 
 node app
 
