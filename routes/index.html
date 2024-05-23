@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hurima index</title>
-    <link rel="icon" href="https://media.forgecdn.net/avatars/34/227/635907049004932561.png" type="image/x-icon">
+    <link rel="icon"
+      href="https://media.forgecdn.net/avatars/34/227/635907049004932561.png"
+      type="image/x-icon">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -186,6 +188,94 @@
     margin-bottom: 0; /* Eliminamos el margen inferior de la primera columna en pantallas grandes */
     margin-right: 20px; /* Añadimos un margen derecho a la primera columna en pantallas grandes */
   }
+
+  
+.weather-content {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 1000px; /* Modificar el ancho */
+    height: 300px; /* Modificar el alto */
+    text-align: center;
+    padding: 20px;
+    margin: 10% auto 0;
+    background-color: #f7f5a3;
+    border-radius: 9px;
+    overflow: hidden; /* Para ocultar el contenido que desborde */
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si son demasiado grandes */
+}
+
+.weather-content h1 {
+    font-size: 24px; /* Modifica el tamaño del título */
+    color: #000000;
+    margin: 0;
+    flex-basis: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.weather-content p {
+    color: #000000;
+    margin: 0;
+    flex-basis: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.weather-content {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 1000px; /* Modificar el ancho */
+    height: 300px; /* Modificar el alto */
+    text-align: center;
+    padding: 20px;
+    margin: 10% auto 0;
+    background-color: #f7f5a3;
+    border-radius: 9px;
+    overflow: hidden; /* Para ocultar el contenido que desborde */
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si son demasiado grandes */
+}
+
+.weather-content h1 {
+    font-size: 24px; /* Modifica el tamaño del título */
+    color: #000000;
+    margin: 0;
+    flex-basis: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.weather-content p {
+    color: #000000;
+    margin: 0;
+    flex-basis: 100%; /* Ocupa todo el ancho del contenedor */
+}
+.result {
+    flex-basis: 40%; /* Ancho del 40% del contenedor */
+}
+.form-weather {
+    flex-basis: 60%; /* Ancho del 60% del contenedor */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos del formulario se envuelvan si son demasiado grandes */
+}
+
+.form-weather input[type="text"],
+.form-weather input[type="submit"],
+.form-weather select {
+    flex-basis: calc(33.33% - 20px); /* Ancho del 33.33% del contenedor con margen entre elementos */
+    margin: 0 10px; /* Espacio entre elementos */
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-weather input[type="submit"] {
+    flex-basis: 100%; /* Ocupa todo el ancho del contenedor */
+}
 }
 
 
@@ -201,8 +291,10 @@
       <nav class="navbar navbar-expand-lg sticky-top bg-light ">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="https://media.forgecdn.net/avatars/34/227/635907049004932561.png"
-              alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            <img
+              src="https://media.forgecdn.net/avatars/34/227/635907049004932561.png"
+              alt="Logo" width="30" height="30"
+              class="d-inline-block align-text-top">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -261,7 +353,7 @@
           <h2>Publica tus anuncios <br /> al mejor precio </h2>
           <br />
           <div class="botonexplorar">
-            
+
             <a href="#contenido" class="btn explorar-button">Explorar</a>
             <a href="login.html" class="btn ">Publica un anuncio</a>
           </div>
@@ -275,6 +367,31 @@
       </div>
 
     </main>
+
+    <!-- API CLIMA-->
+    <div class="d-flex justify-content-center"
+      style="align-items: center; align-content: center;">
+      <section class="weather-content m-5  ">
+        <h1>Clima</h1>
+        <div class="result">
+          <p>La temperatura es:</p>
+        </div>
+        <form action method="POST" class="get-weather form-weather">
+          <!-- <input type="text" name="city" id="city" placeholder="Write your city..."> -->
+          <select name id="city" style="margin: 15;">
+            <option disabled selected value>Select the city</option>
+            <option value="Santiago">Santiago</option>
+          </select>
+          <select name id="country" style="margin: 15;">
+            <option disabled selected value>Select the country</option>
+            <option value="CL">Chile</option>
+          </select>
+          <input type="submit" name id value="Get Weather"
+            style="margin-top: 15px;">
+        </form>
+      </section>
+    </div>
+    <!-- MAIN ANUNCIOS-->
     <section class="anuncios" id="contenido">
       <div class="container text-center">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -290,7 +407,8 @@
                   is a little bit longer.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -305,7 +423,8 @@
                   natural lead-in to additional content.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -317,12 +436,14 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -334,12 +455,14 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -351,12 +474,14 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -368,12 +493,14 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -385,12 +512,14 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -402,12 +531,14 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
@@ -419,22 +550,25 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text
-                  below as a natural lead-in to additional content. This card has
+                  below as a natural lead-in to additional content. This card
+                  has
                   even longer content than the first to show that equal height
                   action.</p>
               </div>
               <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary">Last updated 3 mins
+                  ago</small>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
 
   </body>
   <footer>
     <p>© 2024 Todos los derechos reservados.</p>
   </footer>
+
+  <script src="../custom.js"></script>
 </html>
