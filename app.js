@@ -48,14 +48,11 @@
   });
 
   app.listen(port, () => {
-    console.log(`Servidor corriendo en el puerto ${port}`);
+    console.log(`Servidor escuchando en http://localhost:${port}`);
   });
   // -------------------- ROUTING ------------------------ //
 
   // ------------------------ API REST ------------------------ //
-  app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Hello, World!' });
-  });
   app.get('/api/anuncios', (req, res) => {
     const sqlQuery = 'SELECT * FROM anuncios';
     conexion.query(sqlQuery, (error, results, fields) => {
