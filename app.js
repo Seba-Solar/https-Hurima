@@ -167,3 +167,5 @@
     });
 });
   //------------------------ API TIENDA -------------------------------//
+// EXPORTAMOS EL ARCHIVO PARA LA CREACION DE PRUEBAS UNITARIAS
+module.exports = app;
